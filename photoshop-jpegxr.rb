@@ -1,4 +1,4 @@
-class Jpegxr < Formula
+class PhotoshopJpegxr < Formula
   desc "A file-formats plug-in for the Mac version of Photoshop that enables the loading and saving of JPEGXR images."
   homepage "http://research.microsoft.com/en-us/downloads/2436bcaf-41b9-40b0-ac21-d8a3642ad399/default.aspx"
   url "http://ftp.research.microsoft.com/downloads/2436bcaf-41b9-40b0-ac21-d8a3642ad399/JPEGXR_Mac.zip"
