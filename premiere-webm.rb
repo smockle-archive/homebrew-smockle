@@ -1,4 +1,4 @@
-cask :v1 => 'photoshop-webm' do
+cask :v1 => 'premiere-webm' do
   version '1.0.1'
   sha256 '68a2d856d545a4b7e3ccc39f5cbf635ed97d33322eac494b121c40bb32a69688'
 
