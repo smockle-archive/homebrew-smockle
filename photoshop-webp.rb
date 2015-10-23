@@ -6,7 +6,8 @@ class PhotoshopWebp < Formula
   sha256 "9f62f14e8db84a7e8ed4426036bb1959146d967171d22c35455fa38ae6f717c5"
 
   def install
-    # doc.install "README.txt"
+    ohai Dir["#{buildpath}/*"]
+    doc.install "README.txt"
     lib.install "WebP.plugin"
     if File.exist? "/Applications/Adobe\ Photoshop\ CC\ 2015/Plug-ins/File\ Formats/WebP.plugin"
       system "unlink", "/Applications/Adobe\ Photoshop\ CC\ 2015/Plug-ins/File\ Formats/WebP.plugin"
