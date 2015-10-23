@@ -6,8 +6,8 @@ class Jpegxr < Formula
   sha256 "ede372eb29ad9c56f6450cda459548aca15febaa9ae8f4857d523814583e34a2"
 
   def install
-    system "unzip", "JPEGXR_Mac.zip"
-    system "cp", "-Rf", "JPEGXR_Mac.plugin", "/Applications/Adobe\ Photoshop\ CC\ 2015/Plug-ins/File\ Formats/"
+    system "unzip", Dir["JPEGXR_Mac.zip"]
+    system "cp", "-Rf", Dir["JPEGXR_Mac.plugin"], "/Applications/Adobe\ Photoshop\ CC\ 2015/Plug-ins/File\ Formats/"
   end
 
   test do
