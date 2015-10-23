@@ -7,6 +7,8 @@ class Jpegxr < Formula
 
   def install
     system "ls", buildpath
+    system "ls", prefix
+    system "ls", "/Library/Caches/Homebrew"
     # system "unzip", buildpath/"jpegxr-#{version}.zip"
     # system "cp", "-Rf", buildpath/"JPEGXR_Mac.plugin", "/Applications/Adobe\ Photoshop\ CC\ 2015/Plug-ins/File\ Formats/"
   end
