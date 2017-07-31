@@ -8,10 +8,10 @@ class PhotoshopWebp < Formula
   def install
     doc.install "WebP v0.5b7/README.txt"
     lib.install "WebP v0.5b7/WebP.plugin"
-    # if File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
-    #   system "sudo", "unlink", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
-    # end
-    # system "sudo", "ln", "-s", lib/"WebP.plugin", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats"
+    if File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
+      system "sudo", "unlink", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
+    end
+    system "sudo", "ln", "-s", lib/"WebP.plugin", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/"
   end
 
   test do
