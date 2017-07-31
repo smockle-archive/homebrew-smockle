@@ -5,18 +5,16 @@ class PhotoshopJpegxr < Formula
   version "1.1"
   sha256 "ede372eb29ad9c56f6450cda459548aca15febaa9ae8f4857d523814583e34a2"
 
-  @@year = Time.now.strftime("%Y")
-
   def install
     doc.install Dir["#{buildpath}/*.rtf"]
     lib.install "JPEGXR.plugin"
-    if File.exist? "/Applications/Adobe\ Photoshop\ CC\ #{@@year}/Plug-ins/File\ Formats/JPEGXR.plugin"
-      system "unlink", "/Applications/Adobe\ Photoshop\ CC\ #{@@year}/Plug-ins/File\ Formats/JPEGXR.plugin"
+    if File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/JPEGXR.plugin"
+      system "unlink", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/JPEGXR.plugin"
     end
-    system "ln", "-s", lib/"JPEGXR.plugin", "/Applications/Adobe\ Photoshop\ CC\ #{@@year}/Plug-ins/File\ Formats"
+    system "ln", "-s", lib/"JPEGXR.plugin", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats"
   end
 
   test do
-    File.exist? "/Applications/Adobe\ Photoshop\ CC\ #{@@year}/Plug-ins/File\ Formats/JPEGXR.plugin"
+    File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/JPEGXR.plugin"
   end
 end
