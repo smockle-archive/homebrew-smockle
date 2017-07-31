@@ -8,13 +8,14 @@ class PhotoshopWebp < Formula
   def install
     doc.install "WebP v0.5b7/README.txt"
     lib.install "WebP v0.5b7/WebP.plugin"
-    # if File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
-    #   system "sudo", "unlink", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
-    # end
-    # system "sudo", "ln", "-s", lib/"WebP.plugin", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
   end
 
-  test do
-    File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
+  def caveats; <<-EOS.undent
+    Plug-in was installed to:
+        #{lib}/WebP.plugin
+
+    Symlink the plug-in to use it in Adobe Photoshop:
+      sudo ln -s "#{lib}/WebP.plugin" "/Library/Application Support/Adobe/Plug-Ins/CC/File Formats"
+    EOS
   end
 end
