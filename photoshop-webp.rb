@@ -12,10 +12,10 @@ class PhotoshopWebp < Formula
 
   def caveats; <<-EOS.undent
     Plug-in was installed to:
-        #{prefix}/WebP.plugin
+        #{lib}/WebP.plugin
 
     Symlink the plug-in to use it in Adobe Photoshop:
-      sudo ln -s "#{prefix}/WebP.plugin" "/Library/Application Support/Adobe/Plug-Ins/CC/File Formats"
+      sudo ln -s "#{lib}/WebP.plugin" "/Library/Application Support/Adobe/Plug-Ins/CC/File Formats"
     EOS
   end
 end
