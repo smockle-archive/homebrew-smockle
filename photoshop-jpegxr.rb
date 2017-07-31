@@ -8,13 +8,14 @@ class PhotoshopJpegxr < Formula
   def install
     doc.install Dir["#{buildpath}/*.rtf"]
     lib.install "JPEGXR.plugin"
-    if File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/JPEGXR.plugin"
-      system "unlink", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/JPEGXR.plugin"
-    end
-    system "ln", "-s", lib/"JPEGXR.plugin", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats"
   end
 
-  test do
-    File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/JPEGXR.plugin"
+  def caveats; <<-EOS.undent
+    Plug-in was installed to:
+        #{lib}/JPEGXR.plugin
+
+    Symlink the plug-in to use it in Adobe Photoshop:
+      sudo ln -s "#{lib}/JPEGXR.plugin" "/Library/Application Support/Adobe/Plug-Ins/CC/File Formats"
+    EOS
   end
 end
