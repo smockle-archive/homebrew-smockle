@@ -11,7 +11,7 @@ class PhotoshopWebp < Formula
     if File.exist? "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
       system "sudo", "unlink", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
     end
-    system "sudo", "ln", "-s", lib/"WebP.plugin", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/"
+    system "sudo", "ln", "-s", lib/"WebP.plugin", "/Library/Application\ Support/Adobe/Plug-Ins/CC/File\ Formats/WebP.plugin"
   end
 
   test do
